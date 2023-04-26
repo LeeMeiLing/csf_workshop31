@@ -8,16 +8,21 @@ import { INVENTORY, Item } from './models';
 })
 export class AppComponent {
   
-  cart: Item[] = INVENTORY
+  cart: Item[] = []
+
+  constructor(){
+    for(let i of INVENTORY){
+      this.cart.push(i)
+    }
+  }
 
   addToCart(item:Item){
     let itemFound = this.cart.find( i => i.description == item.description)
     itemFound!.quantity += 1
   }
 
-
   removeFromCart(item:Item){
     let itemFound = this.cart.find( i => i.description == item.description)
-    this.cart.
+    itemFound!.quantity = 0
   }
 }
