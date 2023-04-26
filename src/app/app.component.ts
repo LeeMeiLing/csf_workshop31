@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { INVENTORY, Item } from './models';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'workshop31';
+  
+  cart: Item[] = INVENTORY
+
+  addToCart(item:Item){
+    let itemFound = this.cart.find( i => i.description == item.description)
+    itemFound!.quantity += 1
+  }
+
+
+  removeFromCart(item:Item){
+    let itemFound = this.cart.find( i => i.description == item.description)
+    this.cart.
+  }
 }

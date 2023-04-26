@@ -1,0 +1,7 @@
+<table>
+    <tr *ngFor="let item of inventoryList">
+        <td><img src="{{item.image}}" height="100px"></td>
+        <td>{{item.description}}</td>
+        <td><button type="button" (click)="addItem(item)">Add</button></td>
+    </tr>
+</table>
